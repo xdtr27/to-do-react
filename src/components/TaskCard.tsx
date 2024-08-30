@@ -1,16 +1,19 @@
 import { Trash2 } from "lucide-react";
 import styles from "./TaskCard.module.css";
 import Checkbox from "./Checkbox";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import TaskContent from "./TaskContent";
 
-const content =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, amettotam dolor nobis vitae, adipisci";
+type TaskListProps = {
+  id: number;
+  content: string;
+  checked: boolean;
+};
 
 type TaskCardProps = {
   id: number;
-  taskList: Array<object>;
-  setTaskList: () => Array<object>;
+  taskList: [TaskListProps];
+  setTaskList: ([]) => void;
   content: string;
   checked: boolean;
 };
@@ -24,11 +27,19 @@ export default function TaskCard(props: TaskCardProps) {
     setTaskList(
       taskList.map((task) => {
         if (task.id === id) {
+          console.log({...task, checked: !taskChecked})
           return { ...task, checked: !taskChecked };
         }
         return task;
       })
+     
     );
+    // taskList.map((task) => {
+    //   if (task.id === id) {
+    //     return { ...task, checked: !taskChecked };
+    //   }
+    //   return task;
+    // })
 
     setTaskChecked(!taskChecked); // Toggle checkbox state when clicked on it. This updates the state in the parent component.
   }

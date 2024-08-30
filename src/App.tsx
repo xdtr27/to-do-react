@@ -13,36 +13,35 @@ type Task = {
 };
 
 function App() {
-  const data = localStorage.getItem('taskList');
-  const [tasks, setTask] = useState(JSON.parse(data));
+ 
+const data = localStorage.getItem("taskList")
+  ? JSON.parse(localStorage.getItem("taskList")!) // ! added to assert that the value is not null
+  : [];
+
+  const [tasks, setTask] = useState(data);
   const [completedTasks, setCompletedTasks] = useState(0);
 
-
   function handleSetTask() {
-    const inputContent = document.getElementById("central-input");
+    const inputContent = document.getElementById(
+      "central-input"
+    ) as HTMLInputElement;
     setTask([
       ...tasks,
       { id: tasks.length + 1, content: inputContent.value, checked: false },
     ]);
-
-
-    
   }
-  
+
   useEffect(() => {
-    const completedList = tasks.filter((task) => {
+    const completedList = tasks.filter((task: Task) => {
       if (task.checked) {
         return task;
       }
     });
     setCompletedTasks(completedList.length);
 
-  
-    localStorage.setItem('taskList', JSON.stringify(tasks));
-    
-    
+    localStorage.setItem("taskList", JSON.stringify(tasks));
   }, [tasks]);
- 
+
   return (
     <>
       <Header />
@@ -69,7 +68,7 @@ function App() {
             </div>
           </header>
           <main className={styles.tasks}>
-            {tasks.map((task) => (
+            {tasks.map((task: Task) => (
               <TaskCard
                 taskList={tasks}
                 setTaskList={setTask}
