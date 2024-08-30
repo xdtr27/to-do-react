@@ -1,0 +1,63 @@
+.task {
+  padding: 1rem;
+  background-color: var(--gray-500);
+
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 8px;
+  gap: 4rem;
+}
+
+.taskText {
+  /* display: grid;
+  grid-template-columns: 4% 1fr; */
+  
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: regular;
+}
+
+.taskText p {
+  line-height: 1.4;
+}
+.taskText label {
+  border: 1px solid red;
+  height: 50%;
+  width: 1.2rem;
+  margin-left: -1.6rem;
+  margin-bottom: -2rem;
+}
+
+.taskText input[type="checkbox"] {
+  opacity: 50;
+}
+
+.taskText input[type="checkbox"]:checked + label {
+  border: 1px solid blue;
+}
+.deleteIcon {
+  padding: .2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .1s;
+}
+.deleteIcon svg {
+  color: var(--gray-300);
+}
+
+.deleteIcon:hover {
+  background-color: var(--gray-400);
+
+}
+
+.deleteIcon:hover svg {
+  color: var(--danger);
+}

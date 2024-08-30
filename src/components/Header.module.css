@@ -1,0 +1,23 @@
+
+.header {
+  background-color: black;
+  width: 100%;
+}
+
+header .boxHeader {
+  display: flex;
+  gap: .75rem;
+  padding: 5rem 0;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.logoText {
+  font-weight: 800;
+  color: var(--blue);
+  font-size: 2.5rem;
+}
+
+.logoText > span {
+  color: var(--purple-dark);
+}
