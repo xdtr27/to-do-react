@@ -42,11 +42,10 @@ function App() {
         Toastify({
           text: error.message,
           position: "center",
-          duration: 4000,
+          duration: 3000,
           style: {
             background: "#e25858",
           },
-          close: true,
         }).showToast();
       }
     }
