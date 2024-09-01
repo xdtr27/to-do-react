@@ -27,25 +27,17 @@ export default function TaskCard(props: TaskCardProps) {
     setTaskList(
       taskList.map((task) => {
         if (task.id === id) {
-          console.log({...task, checked: !taskChecked})
           return { ...task, checked: !taskChecked };
         }
         return task;
       })
-     
     );
-    // taskList.map((task) => {
-    //   if (task.id === id) {
-    //     return { ...task, checked: !taskChecked };
-    //   }
-    //   return task;
-    // })
 
-    setTaskChecked(!taskChecked); // Toggle checkbox state when clicked on it. This updates the state in the parent component.
+    setTaskChecked(!taskChecked);
   }
 
   function handleDelete() {
-    setTaskList(taskList.filter((task) => task.id !== id)); // Remove the task from the list when clicked on the delete icon. This updates the state in the parent component.
+    setTaskList(taskList.filter((task) => task.id !== id));
   }
 
   return (

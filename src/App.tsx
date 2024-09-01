@@ -13,10 +13,9 @@ type Task = {
 };
 
 function App() {
- 
-const data = localStorage.getItem("taskList")
-  ? JSON.parse(localStorage.getItem("taskList")!) // ! added to assert that the value is not null
-  : [];
+  const data = localStorage.getItem("taskList")
+    ? JSON.parse(localStorage.getItem("taskList")!) // ! added to assert that the value is not null
+    : [];
 
   const [tasks, setTask] = useState(data);
   const [completedTasks, setCompletedTasks] = useState(0);
@@ -29,6 +28,7 @@ const data = localStorage.getItem("taskList")
       ...tasks,
       { id: tasks.length + 1, content: inputContent.value, checked: false },
     ]);
+    inputContent.value = ""; // clear input field after task is added
   }
 
   useEffect(() => {
