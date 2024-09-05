@@ -4,7 +4,7 @@ Deploy do Projeto: [ToDoApp](https://to-do-react-drab.vercel.app/)
 
 ## Descrição
 
-O **ToDoList** é um projeto simples de lista de tarefas desenvolvido com React, Vite e CSS Modules. Ele utiliza a biblioteca Lucide React para ícones e Toastify para exibir notificações de sucesso e erro.
+O **ToDoList** é um projeto simples de lista de tarefas desenvolvido com React, Vite e CSS Modules. Ele utiliza a biblioteca Lucide React para ícones e Toastify para exibir notificações caso haja algum erro.
 
 ## Tecnologias
 
